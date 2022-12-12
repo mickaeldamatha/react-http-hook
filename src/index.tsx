@@ -68,11 +68,16 @@ const interceptedRequest = async (
         await _storeData("access_token", newToken.newToken);
         config.headers["Authorization"] = "Bearer " + newToken.newToken;
         const retry = await fetch(url.href, config);
-        return await retry.json();
+        const json = await retry.json();
+        const status = retry.status;
+        return { ...json, status };
       }
     }
 
-    return await response.json();
+    const json = await response.json();
+    const status = response.status;
+
+    return { ...json, status };
   } catch (error: any) {
     return { error: error.message };
   }
