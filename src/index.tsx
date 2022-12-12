@@ -73,7 +73,7 @@ const interceptedRequest = async (
         return { ...json, status };
       }
     }
-
+    console.log(response)
     const json = await response.json();
     const status = response.status;
 
