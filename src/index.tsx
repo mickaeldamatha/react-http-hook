@@ -27,8 +27,6 @@ const interceptedRequest = async (
       config.headers["Authorization"] = "Bearer " + token;
     }
 
-    console.log(config.headers);
-
     let url: URL =
       auth === true
         ? new URL(process.env.REACT_AUTH_SERVER_URL + subUrl)
