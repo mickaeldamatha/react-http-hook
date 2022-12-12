@@ -1,6 +1,6 @@
 {
   "name": "mkdm-react-http-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Http intercepted request react Hook",
   "private": false,
   "main": "lib/index.js",
