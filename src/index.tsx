@@ -78,7 +78,7 @@ const interceptedRequest = async (
   }
 };
 
-export const get = async (body: any, headers: any, subUrl: string) => {
+const get = async (body: any, headers: any, subUrl: string) => {
   try {
     return await interceptedRequest(subUrl, body, headers, "GET");
   } catch (error: any) {
@@ -86,7 +86,7 @@ export const get = async (body: any, headers: any, subUrl: string) => {
   }
 };
 
-export const post = async (body: object, headers: any, subUrl: string) => {
+const post = async (body: object, headers: any | null, subUrl: string) => {
   try {
     return await interceptedRequest(subUrl, body, headers, "POST");
   } catch (error: any) {
@@ -94,7 +94,7 @@ export const post = async (body: object, headers: any, subUrl: string) => {
   }
 };
 
-export const put = async (body: object, headers: object, subUrl: string) => {
+const put = async (body: object, headers: object | null, subUrl: string) => {
   try {
     return await interceptedRequest(subUrl, body, headers, "PUT");
   } catch (error: any) {
@@ -102,10 +102,12 @@ export const put = async (body: object, headers: object, subUrl: string) => {
   }
 };
 
-export const del = async (body: object, headers: object, subUrl: string) => {
+const del = async (body: object, headers: object | null, subUrl: string) => {
   try {
     return await interceptedRequest(subUrl, body, headers, "DELETE");
   } catch (error: any) {
     return { error: error.message };
   }
 };
+
+export { get, post, put, del };
