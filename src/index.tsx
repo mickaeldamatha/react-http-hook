@@ -29,8 +29,8 @@ const interceptedRequest = async (
 
     let url: URL =
       auth === true
-        ? new URL(process.env.AUTH_SERVER_URL + subUrl)
-        : new URL(process.env.HTPP_SERVER_URL + subUrl);
+        ? new URL(process.env.REACT_AUTH_SERVER_URL + subUrl)
+        : new URL(process.env.REACT_HTTP_SERVER_URL + subUrl);
 
     if (config.method === "GET" && body) {
       url.href += subUrl;
