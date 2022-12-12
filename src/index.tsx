@@ -22,7 +22,7 @@ const interceptedRequest = async (
     }
 
     const token = await _retrieveData("access_token");
-
+    console.log(token);
     if (token) {
       config.headers["Authorization"] = "Bearer " + token;
     }
