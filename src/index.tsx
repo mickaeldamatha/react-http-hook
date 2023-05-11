@@ -1,5 +1,10 @@
 import { _storeData, _retrieveData } from "mkdm-rn-async-storage";
 
+/*
+REACT_AUTH_SERVER_URL
+REACT_HTTP_SERVER_URL
+*/
+
 const interceptedRequest = async (
   subUrl: string,
   body: any,
