@@ -5,7 +5,7 @@ REACT_AUTH_SERVER_URL
 REACT_HTTP_SERVER_URL
 */
 
-const interceptedRequest = async (
+export const interceptedRequest = async (
   subUrl: string,
   body: any,
   headers: any,
